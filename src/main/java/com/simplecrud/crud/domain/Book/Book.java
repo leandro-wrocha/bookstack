@@ -22,8 +22,8 @@ import lombok.Setter;
 @EqualsAndHashCode(of = "id")
 public class Book {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer id;
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private String id;
 
   private String name;
 
@@ -31,7 +31,18 @@ public class Book {
 
   private Date updated_at;
 
-  public Book(Integer id) {
+  public Book(String id) {
     this.id = id;
+  }
+
+  public Book(StoreBookDTO storeBookDTO) {
+    this.name = storeBookDTO.name();
+    this.created_at = new Date();
+    this.updated_at = new Date();
+  }
+
+  public Book(UpdateBookDTO updateBookDTO) {
+    this.name = updateBookDTO.name();
+    this.updated_at = new Date();
   }
 }

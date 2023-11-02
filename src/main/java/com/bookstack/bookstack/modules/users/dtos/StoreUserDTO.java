@@ -1,4 +1,4 @@
-package com.simplecrud.crud.domain.User.dtos;
+package com.bookstack.bookstack.modules.users.dtos;
 
 // import com.simplecrud.crud.domain.User.enums.Role;
 

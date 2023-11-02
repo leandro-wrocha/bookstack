@@ -1,9 +1,14 @@
-package com.simplecrud.crud.domain.User.model;
+package com.bookstack.bookstack.modules.users.entities;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
-import com.simplecrud.crud.domain.User.dtos.StoreUserDTO;
-// import com.simplecrud.crud.domain.User.enums.Role;
+import com.bookstack.bookstack.modules.users.dtos.StoreUserDTO;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Entity;
 // import jakarta.persistence.EnumType;
@@ -25,7 +30,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class User {
+public class User implements UserDetails {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -54,5 +59,41 @@ public class User {
     // this.role = storeUserDTO.role();
     this.created_at = new Date();
     this.updated_at = new Date();
+  }
+
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    // TODO Auto-generated method stub
+    return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+  }
+
+  @Override
+  public String getUsername() {
+    // TODO Auto-generated method stub
+    return email;
+  }
+
+  @Override
+  public boolean isAccountNonExpired() {
+    // TODO Auto-generated method stub
+    return true;
+  }
+
+  @Override
+  public boolean isAccountNonLocked() {
+    // TODO Auto-generated method stub
+    return true;
+  }
+
+  @Override
+  public boolean isCredentialsNonExpired() {
+    // TODO Auto-generated method stub
+    return true;
+  }
+
+  @Override
+  public boolean isEnabled() {
+    // TODO Auto-generated method stub
+    return true;
   }
 }

@@ -1,6 +1,9 @@
-package com.simplecrud.crud.domain.Book;
+package com.bookstack.bookstack.modules.book.entities;
 
 import java.util.Date;
+
+import com.bookstack.bookstack.modules.book.dtos.StoreBookDTO;
+import com.bookstack.bookstack.modules.book.dtos.UpdateBookDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

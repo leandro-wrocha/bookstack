@@ -1,4 +1,4 @@
-package com.simplecrud.crud.controllers;
+package com.bookstack.bookstack.modules.book.controllers;
 
 import java.util.Optional;
 
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.simplecrud.crud.domain.Book.Book;
-import com.simplecrud.crud.domain.Book.BookRepository;
-import com.simplecrud.crud.domain.Book.StoreBookDTO;
-import com.simplecrud.crud.domain.Book.UpdateBookDTO;
+import com.bookstack.bookstack.modules.book.dtos.StoreBookDTO;
+import com.bookstack.bookstack.modules.book.dtos.UpdateBookDTO;
+import com.bookstack.bookstack.modules.book.entities.Book;
+import com.bookstack.bookstack.modules.book.repositories.BookRepository;
 
 import jakarta.validation.Valid;
 

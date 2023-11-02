@@ -1,0 +1,5 @@
+CREATE TYPE Rolen AS ENUM ('ADMIN_MASTER', 'ADMIN', 'USER');
+
+ALTER TABLE users
+ALTER COLUMN role TYPE Rolen 
+USING role::text::Rolen;

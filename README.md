@@ -4,5 +4,5 @@
 
 ### LISTA DE OBJETIVOS
 
-- [ ] Autenticação 02/10/2023
+- [x] Autenticação 02/10/2023
 - [ ] Deployment da api v1.0 02/10/2023
